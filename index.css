@@ -1,164 +1,199 @@
-body{
-    box-sizing: border-box;
-    font-family: 'Josefin Sans', sans-serif;
-    background-color: linear-gradient hsl(192, 100%, 67%);
+body {
+  box-sizing: border-box;
+  font-family: "Josefin Sans", sans-serif;
+  background-color: linear-gradient hsl(192, 100%, 67%);
 }
-#desktop-light-img{
-width: 100%;
-margin-top:0;
-padding-top: 0;
-position: absolute;
-top:0;
-left:0;
-right:0;
-z-index: -1;
+#desktop-light-img {
+  width: 100%;
+  margin-top: 0;
+  padding-top: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: -1;
 }
-.container{
-    width:40vw;
-    display: flex;
-    margin:5rem auto 5rem auto;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
-    position: relative;
+.container {
+  display: flex;
+  max-width:40vw;
+  min-width: 20vw;
+  margin: 5rem auto 5rem auto;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  position: relative;
 }
-h1{
+h1 {
+  width: 100%;
+  position: relative;
+  font-size: 40px;
+  font-weight: 700;
+  font-style: normal;
+  padding-top: 0;
+  margin-top: 0;
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 15px;
+}
 
-width: 100%;
-position: relative;
-font-size: 40px;
-font-weight: 700;
-font-style: normal;;
-padding-top:0;
-margin-top: 0;
-color: white;
-text-transform: uppercase;
- letter-spacing: 15px;
+.mode {
+  position: absolute;
+  right: 0;
+  width: 25.113px;
+  height: 26px;
+  flex-shrink: 0;
 }
- 
-.mode{
-position: absolute;
-right: 0;
-width: 25.113px;
-height: 26px;
-flex-shrink: 0;
+#taskArea,
+.items {
+  width: 100%;
+  border: none;
+  font-weight: 400;
+  font-size: 18px;
+  letter-spacing: 0.25px;
+  margin: 0;
+  padding: 0;
+  border-color: transparent;
+  outline: none;
 }
-#taskArea, .items{
-    width: 100%;
-    border: none;
-    font-weight: 400;
-    font-size: 18px;
-    letter-spacing: 0.25px;
-    margin: 0;
-    padding: 0;
-    border-color: transparent;
-    outline: none;
-}
-.content{
-    display: flex;
-    flex-direction: row;
-    gap:20px;
-    height: 64px; 
-    background-color: white;
-    box-shadow: 0px 35px 50px -15px rgba(194, 195, 214, 0.50);
-    border-radius: 5px;
-    padding:2px 20px;
-    margin-bottom: 20px;
-    position: relative;
-    
+.content {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  height: 64px;
+  background-color: white;
+  box-shadow: 0px 35px 50px -15px rgba(194, 195, 214, 0.5);
+  border-radius: 5px;
+  padding: 2px 20px;
+  margin-bottom: 20px;
+  position: relative;
 }
 /* created list style */
-.wrap-container{
-    margin-bottom: 0.1rem;
-    width: 100%;
+.wrap-container {
+  margin-bottom: 0.1rem;
+  width: 100%;
 }
-.wrap{
-    display:flex;
-    flex-direction: row;
-    box-shadow: 0px 35px 50px -15px rgba(194, 195, 214, 0.50);
-    border-radius: 5px;
-    margin-bottom: 2px;
-    background-color: white;
-    
-    
+.wrap {
+  display: flex;
+  flex-direction: row;
+  box-shadow: 0px 35px 50px -15px rgba(194, 195, 214, 0.5);
+  border-radius: 5px;
+  margin-bottom: 2px;
+  background-color: white;
 }
 
-.items{
+.items {
   overflow: hidden !important;
-    column-gap: 2em;
-    width: 100%;
+  column-gap: 2em;
+  width: 100%;
 }
 
-#checker{
-    width: 5%;
-    height:auto;
+#checker {
+  width: 5%;
+  height: auto;
 }
 
-.crossButton, .accessData:hover{
-    cursor: pointer;
+.crossButton,
+.accessData:hover {
+  cursor: pointer;
 }
-.crossButton{
-    width:1.2rem; 
-    position: relative; 
-    top:15px; 
-    right: 10px;
+.crossButton {
+  width: 1.2rem;
+  position: relative;
+  top: 15px;
+  right: 10px;
 }
-.circleImage{
-    width:2rem; 
-    padding: 9px 0 0 15px
+.circleImage {
+  width: 2rem;
+  padding: 9px 0 0 15px;
 }
-.circleImage:hover{
-    cursor: pointer;
+.circleImage:hover {
+  cursor: pointer;
 }
-
 
 /* bar style */
-.bar, .sort{
-    display:flex;
-    flex-direction: row;
+.bar,
+.sort {
+  display: flex;
+  flex-direction: row;
 }
-.bar{
-    justify-content: space-between;
-    width:100%;
-    background-color: white;
-    align-items: center;
-    box-shadow: 0px 35px 50px -15px rgba(194, 195, 214, 0.50);
-    border-radius: 5px;
-    display: none;
-    
-}
-
-.sort{
-    justify-content: space-between;
-    gap: 15px;
-    color: rgba(0, 0, 0, 0.479)
-}
-.sort p:hover{
-    color: black;
-    cursor: pointer;
-}
-.sort p:focus{
-color: blue !important;
-}
-.arrNo{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    padding-left: 20px;
-    opacity: 0.5;
-    gap:5px;
+.bar {
+  justify-content: space-between;
+  width: 100%;
+  background-color: white;
+  align-items: center;
+  box-shadow: 0px 35px 50px -15px rgba(194, 195, 214, 0.5);
+  border-radius: 5px;
+  display: none;
 }
 
-.delComplete{
-    padding-right: 20px;
-    cursor: pointer;
+.sort {
+  justify-content: space-between;
+  gap: 15px;
+  color: rgba(0, 0, 0, 0.479);
+}
+.sort p:hover {
+  color: black;
+  cursor: pointer;
+}
+.sort p:focus {
+  color: blue !important;
+}
+.arrNo {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding-left: 20px;
+  opacity: 0.5;
+  gap: 5px;
+}
+
+.delComplete {
+  padding-right: 20px;
+  cursor: pointer;
 }
 
 /* footer style */
-footer{
-    position: absolute;
-    bottom: 0;
+footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  left: 0;
+  right: 0;
+}
+
+.newContainer-light {
+  background-color: #25273d;
+  box-shadow: 0px 35px 50px -15px rgba(15, 15, 15, 0.5);
+  color: #ffffff;
+}
+
+.newContainer-dark {
+    background-color: white;
+    box-shadow: 0px 35px 50px -15px rgba(194, 195, 214, 0.50);
+    color: #000000;
+}
+
+/* /* adding a responsive design  */
+
+@media screen and (max-width: 992px) {
+
+  .container{
     width: 100%;
-    left: 0;
-    right: 0;
+    max-width: fit-content;
+    min-width: fit-content;
+    font-size: 12px;
+    font-weight: normal;
+    }
+    .cross{
+      display: inline-block;
+    }
+  .arrNo, .delComplete{
+    display: none;
+  }
+  .sort, .bar{
+    justify-content: center;
+  }
+  #desktop-light-img {
+    height: 20%;
+  }
 }
