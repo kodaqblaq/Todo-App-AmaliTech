@@ -105,7 +105,29 @@ function deleteTodoItem(element) {
 
 // Event listeners for filter buttons (Not described in the provided code).
 // Functions delComplete, selectAll, completed, and active are executed when the buttons are clicked.
+const delComplete = document.querySelector('.delComplete');
+delComplete.addEventListener('click', () => {
+    TodoItems = []
+    allTodo(TodoItems);
+});
 
+const selectAll = document.querySelector('#first');
+selectAll.addEventListener('click', () => {
+    allTodo(TodoItems);
+});
+
+const completed = document.querySelector('#third');
+completed.addEventListener('click', () => {
+    const completedTodos = TodoItems.filter(todo => todo.active);
+    allTodo(completedTodos);
+});
+
+const active = document.querySelector('#second');
+active.addEventListener('click', () => {
+    const activeTodos = TodoItems.filter(todo => !todo.active);
+    allTodo(activeTodos);
+});
+ 
 // drag event functions
 function handleDragStart(event, id) {
     event.dataTransfer.setData('text/plain', id);
