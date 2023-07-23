@@ -1,4 +1,3 @@
-```javascript
 // Todo List App
 
 // Initialize global variables
@@ -43,4 +42,3 @@ mode.addEventListener('click', (e) => {
     console.log("clicked on mode"); // Print a message to the console to indicate that the mode button was clicked
     toggle(e); // Call the toggle function to switch the theme
 });
-```
