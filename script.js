@@ -14,7 +14,7 @@ source.addEventListener('keypress', addTodoItem);
 // Function to display all todo items. If no 'todos' parameter is provided, it will use TodoItems array.
 function allTodo(todos = TodoItems) {
     todoListContainer.innerHTML = todos.map(todo => createTodoTemplate(todo)).join('');
-    updateItems(); // Update the count of total todo items
+    updateItems(TodoItems); // Update the count of total todo items
 }
 
 // Match media to check for screen width. (Not used in the code provided)
@@ -70,8 +70,8 @@ function toggleActiveClass(id) {
 }
 
 // Function to update the count of total todo items.
-function updateItems() {
-    document.querySelector('#No').innerHTML = TodoItems.length;
+function updateItems(updates) {
+    document.querySelector('#No').innerHTML = updates.length;
 }
 
 // Function to generate a unique ID for new todo items.
@@ -86,7 +86,7 @@ function addTodoItem(e) {
         const newTodo = {
             id: generateUniqueId(), // Assign a unique ID to the new todo item
             todoData: source.value.trim(), // Get the todo data from the input field and remove leading/trailing spaces
-            active: false // Set the initial active status to false (not completed)
+            active: false, // Set the initial active status to false (not completed)
         };
         if (newTodo.todoData) { // Check if the todo data is not empty
             TodoItems.push(newTodo); // Add the new todo item to the TodoItems array
@@ -101,31 +101,46 @@ function deleteTodoItem(element) {
     const id = Number(element.id); // Convert the ID to a number
     TodoItems = TodoItems.filter(todo => todo.id !== id); // Filter out the todo item with the given ID from the TodoItems array
     allTodo(TodoItems); // Redraw all todo items to update the UI
+    updateItems(TodoItems);
 }
 
 // Event listeners for filter buttons (Not described in the provided code).
 // Functions delComplete, selectAll, completed, and active are executed when the buttons are clicked.
-const delComplete = document.querySelector('.delComplete');
-delComplete.addEventListener('click', () => {
-    TodoItems = []
-    allTodo(TodoItems);
-});
 
+
+//delete completed items
+const deleteCompletedItems=()=>{
+    TodoItems = TodoItems.filter(todo => !todo.active); // Filter out completed items
+    allTodo(TodoItems); // Redraw all todo items to update the UI
+}
+const delComplete = document.querySelector('.delComplete');
+delComplete.addEventListener('click', deleteCompletedItems);
+
+
+
+//show all todo items
 const selectAll = document.querySelector('#first');
 selectAll.addEventListener('click', () => {
     allTodo(TodoItems);
+    updateItems(TodoItems);
 });
 
+
+//show only completed items
 const completed = document.querySelector('#third');
 completed.addEventListener('click', () => {
-    const completedTodos = TodoItems.filter(todo => todo.active);
-    allTodo(completedTodos);
+    const completedItems = TodoItems.filter(todo => todo.active);
+    allTodo(completedItems);
+    updateItems(completedItems);
 });
 
+
+//show only uncompleted items
 const active = document.querySelector('#second');
 active.addEventListener('click', () => {
-    const activeTodos = TodoItems.filter(todo => !todo.active);
-    allTodo(activeTodos);
+   const activeItems = TodoItems.filter(todo => !todo.active);
+    allTodo(activeItems);
+    updateItems(activeItems);
 });
  
 // drag event functions
