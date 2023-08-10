@@ -3,6 +3,7 @@
 // Initialize global variables
 let container = document.querySelector('.wrap'); // Get the main container element
 let bar = document.querySelector('.bar'); // Get the top bar element
+let mini = document.querySelector('.mini'); // Get the top bar element
 
 
 // Change mode: Update this function for proper toggle and apply the styles to the entire document body.
@@ -27,6 +28,9 @@ const toggle = (e) => { // Function to toggle the theme
     bar.style.backgroundColor = isOn ? '#25273D' : 'white'; // Set the background color of the top bar
     bar.style.color = isOn ? '#ffffff' : '#000000'; // Set the text color of the top bar
     bar.style.boxShadow = isOn ? '0px 35px 50px -15px rgba(15, 15, 15, 0.5)' : '0px 35px 50px -15px rgba(194, 195, 214, 0.50)'; // Apply a box shadow for the top bar
+    mini.style.backgroundColor = isOn ? '#25273D' : 'white'; // Set the background color of the top bar
+    mini.style.color = isOn ? '#ffffff' : '#000000'; // Set the text color of the top bar
+    mini.style.boxShadow = isOn ? '0px 35px 50px -15px rgba(15, 15, 15, 0.5)' : '0px 35px 50px -15px rgba(194, 195, 214, 0.50)'; // Apply a box shadow for the top bar
 
     // Apply dark mode styles to newContainer elements
     const newContainers = document.querySelectorAll('.newContainer'); // Get all elements with the class "newContainer"
