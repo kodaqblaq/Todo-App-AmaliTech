@@ -71,7 +71,8 @@ function toggleActiveClass(id) {
 
 // Function to update the count of total todo items.
 function updateItems(updates) {
-    document.querySelector('#No').innerHTML = updates.length;
+    document.querySelector('.No').innerHTML = updates.length;
+    document.querySelector('.Num').innerHTML = updates.length;
 }
 
 // Function to generate a unique ID for new todo items.
@@ -114,7 +115,9 @@ const deleteCompletedItems=()=>{
     allTodo(TodoItems); // Redraw all todo items to update the UI
 }
 const delComplete = document.querySelector('.delComplete');
+const dellComplete = document.querySelector('.dellComplete');
 delComplete.addEventListener('click', deleteCompletedItems);
+dellComplete.addEventListener('click', deleteCompletedItems);
 
 
 
