@@ -146,7 +146,7 @@ h1 {
   gap: 5px;
 }
 
-.delComplete {
+.delComplete , .dellComplete{
   padding-right: 20px;
   cursor: pointer;
 }
@@ -173,16 +173,22 @@ footer {
 }
 
 
+
+
+
 /* /* adding a responsive design  */
 
 @media screen and (max-width: 992px) {
 
-  .container{
-    /* width: 100%; */
-    max-width: fit-content;
-    min-width: fit-content;
-    font-size: 12px;
-    font-weight: normal;
+    .container {
+      display: flex;
+      max-width:40vw;
+      min-width: 20vw;
+      margin: 5rem auto 5rem auto;
+      flex-direction: column;
+      justify-content: space-around;
+      align-items: center;
+      position: relative;
     }
  
   .arrNo, .delComplete{
@@ -190,6 +196,7 @@ footer {
   }
   .mini{
     display: flex;
+    margin-bottom: 15px;
   }
   .sort, .bar{
     justify-content: center;
