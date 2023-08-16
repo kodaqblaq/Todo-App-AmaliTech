@@ -197,6 +197,9 @@ footer {
       position: relative;
       font-size: 10px;
     }
+    #desktop-light-img {
+      height: 20vh
+    }
   .arrNo, .delComplete{
     display: none;
   }
