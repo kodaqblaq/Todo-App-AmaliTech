@@ -110,6 +110,12 @@ h1 {
 }
 
 /* bar style */
+#bar{
+  display: none;
+}
+#mini{
+  display: none;
+}
 .bar,
 .sort, .mini {
   display: flex;
@@ -191,10 +197,6 @@ footer {
       position: relative;
       font-size: 10px;
     }
- 
-    .content{
-      box-shadow: none !important;
-    }
   .arrNo, .delComplete{
     display: none;
   }
@@ -204,8 +206,5 @@ footer {
   }
   .sort, .bar{
     justify-content: center;
-  }
-  #desktop-light-img {
-    height: 20%;
   }
 }
