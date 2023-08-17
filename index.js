@@ -87,7 +87,10 @@ function addTodoItem(e) {
         e.preventDefault(); // Prevent the default behavior of the Enter key
         document.querySelector('#bar').style.display = 'flex';
         document.querySelector('#mini').style.display = 'flex';
-    
+        document.querySelector('.Num').style.display = 'flex';
+        document.querySelector('#arr').style.display = 'flex';
+        document.querySelector('.dellComplete').style.display = 'flex';
+        
         const newTodo = {
             id: generateUniqueId(), // Assign a unique ID to the new todo item
             todoData: source.value.trim(), // Get the todo data from the input field and remove leading/trailing spaces
