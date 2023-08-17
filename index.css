@@ -110,10 +110,21 @@ h1 {
 }
 
 /* bar style */
+
 #bar, .mini, #arr, .Num, .dellComplete{
   display: none;
 }
 .bar,.sort {
+
+#bar{
+  display: none;
+}
+#mini{
+  display: none;
+}
+.bar,
+.sort, .mini {
+
   display: flex;
   flex-direction: row;
 }
@@ -193,6 +204,7 @@ footer {
       position: relative;
       font-size: 10px;
     }
+
     
     .mini{
       display: flex;
@@ -204,6 +216,8 @@ footer {
       box-shadow: 0px 35px 50px -15px rgba(194, 195, 214, 0.5);
       border-radius: 5px;
     }
+
+
     #desktop-light-img {
       height: 20vh
     }
